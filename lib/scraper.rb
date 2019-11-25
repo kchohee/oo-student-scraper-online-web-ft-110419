@@ -6,6 +6,7 @@ class Scraper
    @@all = []
    def initialize(student_hash)
      @@all << student_hash.each {|k,v| self.send("#{k}=", v)}
+     binding.pry
    end
 
   def self.scrape_index_page(index_url)
