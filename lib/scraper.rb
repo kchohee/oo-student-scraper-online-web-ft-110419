@@ -18,4 +18,4 @@ class Scraper
   end
 
 end
-Scraper.scrape_index_page(url)
+Scraper.scrape_index_page("url")
