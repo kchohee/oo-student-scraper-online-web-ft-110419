@@ -26,6 +26,7 @@ class Scraper
       else
         profile_info[:blog]=info.attribute('href').value
       end
+    end
         profile_info[:profile_quote]=web.css(".profile-quote").text
         profile_info[:bio]=web.css(".description-holder p")[0].text
       end
