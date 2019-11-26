@@ -26,7 +26,7 @@ class Scraper
       #   profile_info[:github]=info.xpath('a').attr('href').text.strip
       # when info.attr("href").include?("blog")
       #   profile_info[:blog]=info.xpath('a').attr('href').text.strip
-      #   binding.pry
+        binding.pry
       end
       profile_info[:profile_quote]=stuff.css(".vitals-text-container .profile-quote").text
       profile_info[:bio]=stuff.css(".description-holder p").text
