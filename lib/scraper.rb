@@ -26,8 +26,8 @@ class Scraper
       elsif  info.attr("href").include?("blog")
         profile_info[:blog]=info.attribute('href').value
       else
-        profile_info[:profile_quote]=info.css(".profile-quote").text
-        profile_info[:bio]=info.css(".description-holder p")[0].text
+        profile_info[:profile_quote]=web.css(".profile-quote").text
+        profile_info[:bio]=web.css(".description-holder p")[0].text
       end
     end
     profile_info
