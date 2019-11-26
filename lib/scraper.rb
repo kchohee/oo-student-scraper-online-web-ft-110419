@@ -26,8 +26,9 @@ class Scraper
       if info.attr("href").include?("blog")
         profile_info[:blog]=info.attribute('href').value
       else
-      profile_info[:profile_quote]=info.css(".vitals-text-container .profile-quote").text
-      profile_info[:bio]=info.css(".description-holder p").text
+        profile_info[:profile_quote]=info.css(".vitals-text-container .profile-quote").text
+        profile_info[:bio]=info.css(".description-holder p").text
+      end
     end
     profile_info
   end
