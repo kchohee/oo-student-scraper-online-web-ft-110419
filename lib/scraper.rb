@@ -28,7 +28,7 @@ class Scraper
       when info.attr("href").include?("blog")
         profile_info[:blog]=info.xpath('a').attr('href').text.strip
       end
-      profile_info[:profile_quote]=info.css(".vitals-text-container .profile-quote")
+      profile_info[:profile_quote]=info.css(".vitals-text-container .profile-quote").text
       profile_info[:bio]=info.css(".description-holder p").text
     end
     profile_info
