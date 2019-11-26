@@ -26,7 +26,7 @@ class Scraper
         profile_info[:github]=info.attribute('href').value
       when info.attr("href").include?("blog")
         profile_info[:blog]=info.attribute('href').value
-        
+
       profile_info[:profile_quote]=info.css(".vitals-text-container .profile-quote").text
       profile_info[:bio]=info.css(".description-holder p").text
     end
