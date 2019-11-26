@@ -18,8 +18,8 @@ class Scraper
     profile = web.css("div.social-icon-container a")
     profile.each do |info|
        case info
-      # when info.attr("href").include?("twitter")
-      #   profile_info[:twitter]=info.xpath('a').attr('href').text.strip
+      when info.attr("href").include?("twitter")
+        profile_info[:twitter]=info.xpath('a').attr('href').text.strip
       # when info.attr("href").include?("linkedin")
       #   profile_info[:linkedin]=info.xpath('a').attr('href').text.strip
       # when info.attr("href").include?("github")
