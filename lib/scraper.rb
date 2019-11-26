@@ -9,7 +9,6 @@ class Scraper
     roster = web.css(".student-card")
     roster.each do |info|
       student_info << {:name=>info.css("h4").text,:location=>info.css("p").text,:profile_url=>info.xpath('a').attr('href').text.strip}
-      # binding.pry
     end
     student_info
   end
