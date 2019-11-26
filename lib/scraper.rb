@@ -19,7 +19,7 @@ class Scraper
     profile.each do |info|
        case true
       when info.attr("href").include?("twitter")
-        profile_info[:twitter]=info.attr('href').text.strip
+        profile_info[:twitter]=info.attr('href').value
       # when info.attr("href").include?("linkedin")
       #   profile_info[:linkedin]=info.xpath('a').attr('href').text.strip
       # when info.attr("href").include?("github")
