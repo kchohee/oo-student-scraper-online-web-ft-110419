@@ -28,8 +28,8 @@ class Scraper
       #   profile_info[:blog]=info.xpath('a').attr('href').text.strip
       #   binding.pry
       end
-      profile_info[:profile_quote]=info.css(".vitals-text-container .profile-quote").text
-      profile_info[:bio]=info.css(".description-holder p").text
+      profile_info[:profile_quote]=stuff.css(".vitals-text-container .profile-quote").text
+      profile_info[:bio]=stuff.css(".description-holder p").text
     end
     profile_info
   end
