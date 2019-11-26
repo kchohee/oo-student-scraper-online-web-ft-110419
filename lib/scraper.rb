@@ -2,14 +2,9 @@ require 'open-uri'
 require 'pry'
 
 class Scraper
-   attr_accessor :name, :location, :profile_quote, :bio, :twitter, :linkedin, :github, :blog, :profile_url
-   @@all = []
-   def initialize(student_hash)
-     student_hash.each {|k,v| self.send("#{k}=", v)}
-     @@all << self
-   end
-
   def self.scrape_index_page(index_url)
+
+  web = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"))
 
   end
 
