@@ -7,7 +7,7 @@ class Scraper
     web = Nokogiri::HTML(open(index_url))
     roster = web.css(".student-card")
     roster.each do |info|
-      student_info << {:name => card.css("h4").text, :location => card.css("p").text, :profile_url => card.css("href")}
+      student_info << {:name => card.css("h4").text, :location => card.css("p").text, :profile_url => card.css(".href")}
       binding.pry
     end
     student_info
