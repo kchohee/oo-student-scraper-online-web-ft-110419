@@ -16,4 +16,5 @@ class Scraper
 
   end
 end
-scraper.new.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
+Scraper.new
+Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
