@@ -23,9 +23,9 @@ class Scraper
         profile_info[:linkedin]=info.attribute('href').value
       elsif info.attr("href").include?("github")
         profile_info[:github]=info.attribute('href').value
-      elsif  info.attr("href").include?("blog")
-        profile_info[:blog]=info.attribute('href').value
       else
+        profile_info[:blog]=info.attribute('href').value
+      end
         profile_info[:profile_quote]=web.css(".profile-quote").text
         profile_info[:bio]=web.css(".description-holder p")[0].text
       end
