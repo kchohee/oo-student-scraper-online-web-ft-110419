@@ -17,16 +17,16 @@ class Scraper
     web = Nokogiri::HTML(open(profile_url))
     profile = web.css("div.social-icon-container a")
     profile.each do |info|
-      case info
-      when info.attr("href").include?("twitter")
-        profile_info[:twitter]=info.xpath('a').attr('href').text.strip
-      when info.attr("href").include?("linkedin")
-        profile_info[:linkedin]=info.xpath('a').attr('href').text.strip
-      when info.attr("href").include?("github")
-        profile_info[:github]=info.xpath('a').attr('href').text.strip
-      when info.attr("href").include?("blog")
-        profile_info[:blog]=info.xpath('a').attr('href').text.strip
-        binding.pry
+      # case info
+      # when info.attr("href").include?("twitter")
+      #   profile_info[:twitter]=info.xpath('a').attr('href').text.strip
+      # when info.attr("href").include?("linkedin")
+      #   profile_info[:linkedin]=info.xpath('a').attr('href').text.strip
+      # when info.attr("href").include?("github")
+      #   profile_info[:github]=info.xpath('a').attr('href').text.strip
+      # when info.attr("href").include?("blog")
+      #   profile_info[:blog]=info.xpath('a').attr('href').text.strip
+      #   binding.pry
       end
       profile_info[:profile_quote]=info.css(".vitals-text-container .profile-quote").text
       profile_info[:bio]=info.css(".description-holder p").text
