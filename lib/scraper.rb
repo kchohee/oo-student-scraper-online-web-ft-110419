@@ -14,7 +14,23 @@ class Scraper
     student_info
   end
   def self.scrape_profile_page(profile_url)
-
+    profile_info={}
+    web = Nokogiri::HTML(open(profile_url)
+    profile = web.xpath('a').attr('href').text.strip
+    profile.each do |info|
+      case info
+      when info.attr("href").include?("twitter")
+        profile_info[:twitter]=info.xpath('a').attr('href').text.strip
+      when info.attr("href").include?
+        profile_info[:linkedin]
+      when info.attr("href").include?
+        profile_info[:github]
+      when info.attr("href").include?
+        profile_info[:blog]
+      end
+      profile_info[:profile_quote]=
+      profile_info[:bio] =
+    end
   end
 end
 # Scraper.new
