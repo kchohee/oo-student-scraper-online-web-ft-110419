@@ -15,7 +15,7 @@ class Scraper
   end
   def self.scrape_profile_page(profile_url)
     profile_info={}
-    web = Nokogiri::HTML(open(profile_url)
+    web = Nokogiri::HTML(open(profile_url))
     web.css(".social-icon-container a")
     profile.each do |info|
       case info
