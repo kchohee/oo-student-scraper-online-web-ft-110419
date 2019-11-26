@@ -16,5 +16,4 @@ class Scraper
 
   end
 end
-index_url = "https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"
-scraped_students = Scraper.scrape_index_page(index_url)
+ Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
