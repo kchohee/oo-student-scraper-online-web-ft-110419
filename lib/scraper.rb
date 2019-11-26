@@ -16,16 +16,16 @@ class Scraper
     profile_info={}
     web = Nokogiri::HTML(open(profile_url))
     profile = web.css("div.social-icon-container a")
-    profile.each do |info|
+    profile.each do |info| info = info.attribute('href').value
        case true
       when info.attr("href").include?("twitter")
-        profile_info[:twitter]=info.attribute('href').value
+        profile_info[:twitter]=info
       when info.attr("href").include?("linkedin")
-        profile_info[:linkedin]=info.attribute('href').value
+        profile_info[:linkedin]=info
       when info.attr("href").include?("github")
-        profile_info[:github]=info.attribute('href').value
+        profile_info[:github]=info
       when info.attr("href").include?("blog")
-        profile_info[:blog]=info.attribute('href').value
+        profile_info[:blog]=info
       end
       profile_info[:profile_quote]=info.css(".vitals-text-container .profile-quote").text
       profile_info[:bio]=info.css(".description-holder p").text
