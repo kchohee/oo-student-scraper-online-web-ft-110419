@@ -15,7 +15,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile_info={}
     web = Nokogiri::HTML(open(profile_url))
-    profile = web.css('div#social-icon-container a')
+    profile = web.css("div.social-icon-container a")
     profile.each do |info|
       case info
       when info.attr("href").include?("twitter")
@@ -34,6 +34,7 @@ class Scraper
     profile_info
   end
 end
+
 Scraper.new
 Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
 Scraper.scrape_profile_page("https://learn-co-curriculum.github.io/student-scraper-test-page/students/joe-burgess.html")
