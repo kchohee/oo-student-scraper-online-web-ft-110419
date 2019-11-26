@@ -9,7 +9,7 @@ class Scraper
     roster = web.css(".student-card")
     roster.each do |info|
       student_info << {:name=>info.css("h4").text,:location=>info.css("p").text,:profile_url=>info.xpath('a').attr('href').text.strip}
-      binding.pry
+      # binding.pry
     end
     student_info
   end
@@ -17,5 +17,5 @@ class Scraper
 
   end
 end
-Scraper.new
-Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
+# Scraper.new
+# Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
