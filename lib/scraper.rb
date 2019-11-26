@@ -33,6 +33,3 @@ class Scraper
     profile_info
   end
 end
-
-Scraper.new
-Scraper.scrape_profile_page("https://learn-co-curriculum.github.io/student-scraper-test-page/students/joe-burgess.html")
