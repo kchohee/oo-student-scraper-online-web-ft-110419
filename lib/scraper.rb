@@ -5,7 +5,7 @@ class Scraper
    attr_accessor :name, :location, :profile_quote, :bio, :twitter, :linkedin, :github, :blog, :profile_url
    @@all = []
    def initialize(student_hash)
-     student_hash.each {|k,v| self.send("#{k}=")}
+     student_hash.each {|k| self.send("#{k}=")}
      @@all << self
     binding.pry
    end
