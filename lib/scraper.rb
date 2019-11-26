@@ -16,7 +16,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile_info={}
     web = Nokogiri::HTML(open(profile_url))
-    profile = web.xpath(".social-icon-container a")
+    profile = web.css(".social-icon-container a")
     profile.each do |info|
       case info
       when info.attr("href").include?("twitter")
